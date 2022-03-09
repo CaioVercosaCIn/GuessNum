@@ -1,0 +1,25 @@
+import random
+points=0
+lastNum=50
+while True:
+    beforeNum=lastNum
+    print('Número: {}'.format(beforeNum))
+    NumRand=random.randint(0,100)
+    guess=input('Maior ou menor? ')
+    if guess=='+' and NumRand>=beforeNum:
+        print('ACERTOU! O NÚMERO ERA {}'.format(NumRand))
+        points+=1
+    if guess=='+' and NumRand<beforeNum:
+        print('ERRROOOOOOOUU! O NÚMERO ERA {}'.format(NumRand))
+        points-=1
+    #
+    if guess=='-' and NumRand<=beforeNum:
+        print('ACERTOU! O NÚMERO ERA {}'.format(NumRand))
+        points+=1
+    if guess=='-' and NumRand>beforeNum:
+        print('ERRROOOOOOOUU! O NÚMERO ERA {}'.format(NumRand))
+        points-=1
+    print('---')
+    print('Pontuação: '+str(points))
+    print('---')
+    lastNum=NumRand
